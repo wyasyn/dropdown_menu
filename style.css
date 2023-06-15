@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65.5%;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  font-weight: 500;
+  background: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 8%);
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+label {
+  position: absolute;
+  left: -999999999999999px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 1em;
+}
+header .mobile-menu {
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+header .mobile-menu .menu-icon {
+  cursor: pointer;
+}
+@media screen and (width > 768px) {
+  header .mobile-menu {
+    display: none;
+  }
+}
+header .container .col-1 {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-content: center;
+  gap: 2rem;
+}
+header .container .col-1 .menu {
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .col-1 .menu .nav {
+  gap: 2rem;
+}
+header .container .col-1 .menu .nav .dropdown-menu {
+  transition: all 0.3s ease-in;
+  position: relative;
+}
+header .container .col-1 .menu .nav .dropdown-menu:hover .options {
+  visibility: visible;
+}
+header .container .col-1 .menu .nav .dropdown-menu:hover .title .arrow {
+  background-image: url("/images/icon-arrow-up.svg");
+}
+header .container .col-1 .menu .nav .dropdown-menu .title {
+  gap: 2rem;
+  align-items: center;
+  cursor: pointer;
+  color: hsl(0, 0%, 41%);
+  padding: 0.5em 1em;
+}
+header .container .col-1 .menu .nav .dropdown-menu .title:hover {
+  color: hsl(0, 0%, 8%);
+}
+header .container .col-1 .menu .nav .dropdown-menu .title .arrow {
+  height: 10px;
+  width: 10px;
+  background-image: url("/images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+}
+header .container .col-1 .menu .nav .dropdown-menu .options {
+  z-index: 10;
+  position: absolute;
+  top: 10;
+  padding: 0.5em 1em;
+  background: white;
+  border-radius: 10px;
+  visibility: hidden;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.281);
+}
+header .container .col-1 .menu .nav .dropdown-menu .options .option a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+  margin: 0.5em 0;
+  cursor: pointer;
+  color: hsl(0, 0%, 41%);
+}
+header .container .col-1 .menu .nav .dropdown-menu .options .option a:hover {
+  color: hsl(0, 0%, 8%);
+}
+header .container .col-1 .menu .nav .link {
+  color: hsl(0, 0%, 41%);
+  text-decoration: none;
+  font-size: inherit;
+  padding: 0.5em 1em;
+}
+header .container .col-1 .menu .nav .link:hover {
+  color: hsl(0, 0%, 8%);
+}
+header .container .col-1 .menu .col-2 {
+  gap: 3rem;
+}
+header .container .col-1 .menu .col-2 .login {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: hsl(0, 0%, 41%);
+  font-size: inherit;
+  cursor: pointer;
+}
+header .container .col-1 .menu .col-2 .login:hover {
+  color: hsl(0, 0%, 8%);
+}
+header .container .col-1 .menu .col-2 .register {
+  border-radius: 15px;
+  background: transparent;
+  border: 1px solid hsl(0, 0%, 41%);
+  padding: 0.5em 1em;
+  outline: none;
+  color: hsl(0, 0%, 41%);
+  font-size: inherit;
+  cursor: pointer;
+}
+header .container .col-1 .menu .col-2 .register:hover {
+  color: hsl(0, 0%, 8%);
+  border-color: hsl(0, 0%, 8%);
+}
+header .container .col-1 .logo {
+  margin-top: 0.9em;
+}
+@media screen and (width <= 768px) {
+  header .container .col-1 .logo {
+    display: none;
+  }
+}
+@media screen and (width > 768px) {
+  header .container .col-1 .close {
+    display: none;
+  }
+}
+@media screen and (width <= 768px) {
+  header .container .col-1 {
+    display: flex;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    right: -768px;
+    width: 100%;
+    height: 100%;
+    background: hsl(0, 0%, 98%);
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease-in;
+  }
+  header .container .col-1 .menu {
+    margin-top: 5em;
+    flex-direction: column;
+  }
+  header .container .col-1 .menu .nav {
+    flex-direction: column;
+  }
+  header .container .col-1 .menu .nav .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  header .container .col-1 .menu .col-2 {
+    margin-top: 5em;
+    flex-direction: column;
+  }
+  header .container .col-1.active {
+    right: 0;
+  }
+}
+
+main {
+  margin-top: 2em;
+}
+main .container {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+@media screen and (width > 768px) {
+  main .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80vh;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+main .container .col-3 {
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  grid-row: 2;
+}
+@media screen and (width > 768px) {
+  main .container .col-3 {
+    align-items: start;
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+main .container .col-3 h1 {
+  margin: 0.5em 0;
+}
+@media screen and (width > 768px) {
+  main .container .col-3 h1 {
+    font-size: 10rem;
+    line-height: 1;
+  }
+}
+main .container .col-3 p {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: hsl(0, 0%, 41%);
+}
+@media screen and (width > 768px) {
+  main .container .col-3 p {
+    text-align: left;
+    max-width: 500px;
+    margin-bottom: 3em;
+  }
+}
+main .container .col-3 button {
+  border: none;
+  outline: none;
+  background: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 98%);
+  font-size: inherit;
+  padding: 1em 2em;
+  width: 200px;
+  border-radius: 20px;
+  margin-bottom: 3em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (width > 768px) {
+  main .container .col-3 button {
+    margin-bottom: 9em;
+  }
+}
+main .container .col-3 button:hover {
+  background: hsl(0, 0%, 98%);
+  border: 1px solid hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 8%);
+}
+main .container .col-3 .partners {
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+main .container .col-3 .partners img {
+  height: 20px;
+  width: auto;
+}
+main .container .col-4 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/image-hero-mobile.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+@media screen and (width > 768px) {
+  main .container .col-4 {
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url("/images/image-hero-desktop.png");
+  }
+}/*# sourceMappingURL=style.css.map */
